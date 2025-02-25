@@ -9,5 +9,7 @@ or modify build.cpp file provided in examples
 open main.cpp file in the examples and read header file
 or read user guide from both SDKs, functions in the library are similiar to them
 
+# get() doesnt return a value directly, i will fix when i can
+
 # why
 this library supports every function from both SDKs, for C++. Provides even custom message sending for the drone
