@@ -2,7 +2,7 @@
 #include <windows.h>//------------------------------for GetAsyncKeyState
 #include <frog/Tello++.h>//-------------------------include library
 
-//this is simple code for controlling the drone with wasd, arrow keys and space/ctrl using built in windows functions
+//this is simple code for controlling the drone with wasd, arrow keys and space/ctrl
 //if you want to learn more, go through header file in include/frog and through tello SDK user guides (both 1.3 and 2.0 depending on your version)
 //SDK1.3(SDK13 in this library): https://dl-cdn.ryzerobotics.com/downloads/tello/20180910/Tello%20SDK%20Documentation%20EN_1.3.pdf
 //SDK2.0(SDK20 in this library): https://dl-cdn.ryzerobotics.com/downloads/Tello/Tello%20SDK%202.0%20User%20Guide.pdf
