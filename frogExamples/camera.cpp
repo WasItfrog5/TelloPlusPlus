@@ -10,8 +10,7 @@ int main() {
     while(true) {
         cap.read(img);
         cv::imshow("Tello Camera", img);
-	    int key = cv::waitKey(1) & 0xFF;
-        std::cout << key << std::endl;
+	int key = cv::waitKey(1) & 0xFF;
         if(key == 113) {//Q to take picture
             int currTime = time(0);
             cv::imwrite(std::to_string(currTime) + ".jpg", img);
