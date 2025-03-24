@@ -10,7 +10,14 @@ int main() {
     while(true) {
         cap.read(img);
         cv::imshow("Tello Camera", img);
-        if(cv::waitKey(1) == 27) {
+	    int key = cv::waitKey(1) & 0xFF;
+        std::cout << key << std::endl;
+        if(key == 113) {//Q to take picture
+            int currTime = time(0);
+            cv::imwrite(std::to_string(currTime) + ".jpg", img);
+            std::cout << "Picture taken: " << std::to_string(currTime) + ".jpg" << std::endl;
+        }
+        if(key == 27) {//esc to leave
             break;
         }
     }
