@@ -17,9 +17,8 @@
 a cute frog
 */
 //made by frog5, dont use as your own or do idrc
-#define NOMINMAX
 #define WIN32_LEAN_AND_MEAN
-#include <frog/Tello++.h>
+#include "Tello++1.h"
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #include <windows.h>
@@ -89,16 +88,16 @@ int fr::TelloSDK20::sendCustomMessage(std::string message) {
     return 0;
 };
 
-int fr::TelloSDK20::receiveState(char* &buffer) { //8890
-    //int received = recvfrom(sock, buffer_71205643, sizeof(buffer_71205643), 0, (sockaddr*)&from, &fromLen);
-    buffer = buffer_71205643;
-    return recvfrom(sock, buffer_71205643, sizeof(buffer_71205643), 0, (sockaddr*)&from, &fromLen);
+int fr::TelloSDK20::receiveState(char* buffer, int sizeofBuffer) { //8890
+    memset(buffer, 0, sizeofBuffer);
+    int received = recvfrom(sock, buffer, sizeof(buffer), 0, (sockaddr*)&from, &fromLen);
+    return received;
 };
 
-int fr::TelloSDK20::receiveResponse(char* &buffer) { //8889
-    //int received = recvfrom(sock, buffer_71205643, sizeof(buffer_71205643), 0, (sockaddr*)&from, &fromLen);
-    buffer = buffer_41205643;
-    return recvfrom(sock, buffer_41205643, sizeof(buffer_41205643), 0, (sockaddr*)&from1, &fromLen1);
+int fr::TelloSDK20::receiveResponse(char* buffer, int sizeofBuffer) { //8889
+    memset(buffer, 0, sizeofBuffer);
+    int received = recvfrom(sock, buffer, sizeof(buffer), 0, (sockaddr*)&from1, &fromLen1);
+    return received;
 };
 
 int fr::TelloSDK20::close() {
@@ -114,16 +113,16 @@ int fr::TelloSDK13::sendCustomMessage(std::string message) {
     return 0;
 };
 
-int fr::TelloSDK13::receiveState(char* &buffer) {
-    //int received = recvfrom(sock, buffer_71205643, sizeof(buffer_71205643), 0, (sockaddr*)&from, &fromLen);
-    buffer = buffer_71205643;
-    return recvfrom(sock, buffer_71205643, sizeof(buffer_71205643), 0, (sockaddr*)&from, &fromLen);
+int fr::TelloSDK13::receiveState(char* buffer, int sizeofBuffer) {
+    memset(buffer, 0, sizeofBuffer);
+    int received = recvfrom(sock, buffer, sizeof(buffer), 0, (sockaddr*)&from, &fromLen);
+    return received;
 };
 
-int fr::TelloSDK13::receiveResponse(char* &buffer) {
-    //int received = recvfrom(sock, buffer_71205643, sizeof(buffer_71205643), 0, (sockaddr*)&from, &fromLen);
-    buffer = buffer_41205643;
-    return recvfrom(sock, buffer_41205643, sizeof(buffer_41205643), 0, (sockaddr*)&from1, &fromLen1);
+int fr::TelloSDK13::receiveResponse(char* buffer, int sizeofBuffer) {
+    memset(buffer, 0, sizeofBuffer);
+    int received = recvfrom(sock, buffer, sizeof(buffer), 0, (sockaddr*)&from1, &fromLen1);
+    return received;
 };
 
 int fr::TelloSDK13::close() {

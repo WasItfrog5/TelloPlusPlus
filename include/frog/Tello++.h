@@ -68,8 +68,8 @@ namespace fr {
         int getWifiSNR();
         
         int sendCustomMessage(std::string message);
-        int receiveState(char*& buffer); //for example, battery percentage, tof value, speed, acceleration and that
-        int receiveResponse(char*& buffer); //ok/error
+        int receiveState(char* buffer, int sizeofBuffer); //for example, battery percentage, tof value, speed, acceleration and that
+        int receiveResponse(char* buffer, int sizeofBuffer); //ok/error
         int close();
     };
     //sdk2.0 now
@@ -117,8 +117,8 @@ namespace fr {
         int getSDK(); //just get the sdk version
         int getSN(); // get serial number
         int sendCustomMessage(std::string message);
-        int receiveState(char*& buffer); //for example, battery percentage, tof value, speed, acceleration and that
-        int receiveResponse(char*& buffer); //ok/error
+        int receiveState(char* buffer, int sizeofBuffer); //for example, battery percentage, tof value, speed, acceleration and that
+        int receiveResponse(char* buffer, int sizeofBuffer); //ok/error
         int close();
     };
 }
